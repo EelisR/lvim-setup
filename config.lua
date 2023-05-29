@@ -24,7 +24,6 @@ lvim.plugins = {
   {"github/copilot.vim"},
   {"olimorris/onedarkpro.nvim"},
   {"nvim-lua/plenary.nvim"},
-  {"theprimeagen/harpoon"}
 }
 
 vim.opt.termguicolors = true
@@ -35,13 +34,3 @@ vim.opt.relativenumber = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
-lvim.builtin.which_key.mappings["h"] = {
-  name = "Harpoon",
-  t = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle Quick Menu"},
-  a = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark File"},
-}
-
-for i = 0, 9 do
-  vim.api.nvim_set_keymap("n", "<leader>" .. i, "<cmd>lua require('harpoon.ui').nav_file(" .. i .. ")<cr>", { silent = true })
-end
