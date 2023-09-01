@@ -28,23 +28,18 @@ lvim.plugins = {
   { "nvim-lua/plenary.nvim" },
   { "folke/tokyonight.nvim", config = function ()
     require("tokyonight").setup({
-      transparent = true,
+      transparent = false,
     })
   end},
   { "navarasu/onedark.nvim", config = function ()
     require("onedark").setup({
-      transparent = true
+      transparent = false
     })
   end}
 }
 
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {"solargraph"})
-lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
-  return server ~= "ruby_lsp"
-end, lvim.lsp.automatic_configuration.skipped_servers)
-
 vim.opt.cursorline = false
-lvim.transparent_window = true
+lvim.transparent_window = false
 lvim.colorscheme = "onedark"
 lvim.builtin.lualine.style = "default"
 lvim.builtin.lualine.options.theme = lualineTheme
